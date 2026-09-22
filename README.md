@@ -87,9 +87,7 @@ This is a NixOS flake-based configuration with integrated home-manager setup for
 
 The pinned-packages overlay pins specific problematic packages to a known working nixpkgs commit. Currently pins:
 
-- redisinsight
 - android-studio
 - jetbrains.idea-community
 
 When adding new packages that may need pinning, add them to `overlays/pinned-packages.nix` and uncomment the overlay line in `flake.nix`.
-

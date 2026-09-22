@@ -42,6 +42,7 @@ in {
       "Pictures/wallpaper.jpg" = { source = ./files/wallpaper.jpg; };
       "Pictures/kratosgado.png" = { source = ./files/kratosgado.png; };
       ".npmrc".text = "prefix=$HOME/.npm-packages";
+      ".config/kitty/kitty.conf" = { source = ./files/kitty.conf; };
       # # Building this configuration will create a copy of 'dotfiles/screenrc' in
       # # the Nix store. Activating the configuration will then make '~/.screenrc' a
       # # symlink to the Nix store copy.

@@ -4,10 +4,6 @@
     kotlin
     (inputs.rustowl-flake.packages.${pkgs.system}.rustowl)
     lua51Packages.luarocks
-    # nodePackages.typescript
-    # vue-language-server
-    # typescript-language-server
-    # nodePackages.node-gyp
     jdk
     # jdk17
     flutter
@@ -90,7 +86,24 @@
     zoxide
     devbox
 
+    # shells / terminals / editors
+    lazygit
+    lazydocker
+    wl-clipboard
+    xclip
+    delta
+    hurl
+    pipx
+    pre-commit
+
+    # git tooling
     gh
+    git-town
+    git
+
+    # runtimes
+    bun
+    pnpm
 
     # networking tools
     mtr # A network diagnostic tool

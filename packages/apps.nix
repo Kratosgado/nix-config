@@ -14,16 +14,19 @@
     jetbrains.idea-community
     discord
     google-chrome
+    brave
+    obsidian
     vlc
     vdhcoapp
     yt-dlp
     libreoffice
     docker
     dbeaver-bin
-    mongodb-compass
     telegram-desktop
     zapzap
-    # redisinsight
+    kitty
+    imagemagick
+    claude-code
     postgresql # for dadbod
   ];
 }
