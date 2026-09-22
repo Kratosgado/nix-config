@@ -1,14 +1,14 @@
-{ pkgs, ... }: {
+{ pkgs, user, userDescription, hostName, ... }: {
   imports = [ ./hardware-configuration.nix ];
 
   system.activationScripts.script.text = ''
-    cp /home/kratosgado/Pictures/kratosgado.png /var/lib/AccountsService/icons/kratosgado
-    export PATH=$PATH:/home/kratosgado/.npm-packages/bin
+    cp /home/${user}/Pictures/${user}.png /var/lib/AccountsService/icons/${user}
+    export PATH=$PATH:/home/${user}/.npm-packages/bin
     export CHROME_EXECUTABLE="${pkgs.google-chrome}/bin/google-chrome-stable"
   '';
-  users.users.kratosgado = {
+  users.users.${user} = {
     isNormalUser = true;
-    description = "Kratosgado";
+    description = userDescription;
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "adbusers" ];
   };
@@ -40,7 +40,7 @@
 
   #networking
   networking = {
-    hostName = "nixos"; # Define your hostname.
+    hostName = hostName;
     # nftables = {
     #   enable = true;
     #   ruleset = ''
@@ -178,7 +178,7 @@
   nixpkgs.config = {
     allowBroken = true;
     allowUnfree = true;
-    allowUnfreePredicate = true;
+    allowUnfreePredicate = _: true;
     allowUnsupportedSystem = true;
     android_sdk.accept_license = true;
     # permittedInsecurePackages = [ "libsoup-2.74.3" ];

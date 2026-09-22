@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, user, ... }: {
 
   home.packages = with pkgs; [ pay-respects ];
   programs = {
@@ -18,7 +18,7 @@
       enableCompletion = true;
       syntaxHighlighting.enable = true;
       autosuggestion.enable = true;
-      dotDir = "/home/kratosgado/.config/zsh";
+      dotDir = "/home/${user}/.config/zsh";
 
       shellAliases = {
         hms = "home-manager switch";

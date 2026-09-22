@@ -15,7 +15,7 @@
       if [ ! -d "$NVIM_DIR/.git" ]; then
         run mkdir -p "${config.home.homeDirectory}/.config"
         run ${pkgs.git}/bin/git clone \
-          https://github.com/Kratosgado/neovim-config.git "$NVIM_DIR"
+          git@github.com:Kratosgado/neovim-config.git "$NVIM_DIR"
       fi
     '';
 }

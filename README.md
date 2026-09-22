@@ -91,3 +91,25 @@ The pinned-packages overlay pins specific problematic packages to a known workin
 - jetbrains.idea-community
 
 When adding new packages that may need pinning, add them to `overlays/pinned-packages.nix` and uncomment the overlay line in `flake.nix`.
+
+### Bootstrap (non-Nix tools)
+
+Not everything is packaged in nixpkgs. After the first `nixos-rebuild switch`, run:
+
+```
+./bootstrap.sh
+```
+
+That script installs nvm, sdkman, opencode, claude-code, cursor-agent, composio, and prompts for the ones (caa, kiro) that must be fetched manually.
+
+### User Parameterization
+
+Username and hostname are set in one place — `flake.nix`:
+
+```nix
+user = "kratosgado";
+userDescription = "Kratosgado";
+hostName = "nixos";
+```
+
+They are threaded into `configuration.nix`, `home.nix`, and `packages/zsh.nix` via `specialArgs` / `extraSpecialArgs`.

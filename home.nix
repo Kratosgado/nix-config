@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, user, ... }:
 let clibraries = with pkgs; [ xorg.libX11 stdenv.cc.cc.lib zlib ];
 in {
   imports = [ ./vscode ./packages ];
@@ -16,13 +16,13 @@ in {
     #   };
 
     "org/gnome/desktop/background" = {
-      picture-uri = "file:///home/kratosgado/Pictures/wallpaper.jpg";
-      picture-uri-dark = "file:///home/kratosgado/Pictures/wallpaper.jpg";
+      picture-uri = "file:///home/${user}/Pictures/wallpaper.jpg";
+      picture-uri-dark = "file:///home/${user}/Pictures/wallpaper.jpg";
     };
   };
   home = {
-    username = "kratosgado";
-    homeDirectory = "/home/kratosgado";
+    username = user;
+    homeDirectory = "/home/${user}";
 
     stateVersion = "24.11";
     packages = with pkgs; [
@@ -67,7 +67,7 @@ in {
         "${pkgs.opencv4}/lib/pkgconfig:${pkgs.openssl.dev}/lib/pkgconfig:${pkgs.libxml2.dev}/lib/pkgconfig";
       NPM_CONFIG_PREFIX = "$HOME/.npm-packages";
       PNPM_HOME = "$HOME/.pnpm-home";
-      PATH = "/home/kratosgado/.npm-packages/bin:$HOME/.pnpm-home:$PATH";
+      PATH = "/home/${user}/.npm-packages/bin:$HOME/.pnpm-home:$PATH";
       NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
       JAVA_HOME = "${pkgs.jdk}";
       ANDROID_HOME = "$HOME/Android/Sdk";
