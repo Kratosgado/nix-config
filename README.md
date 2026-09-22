@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - `sudo nixos-rebuild switch --flake .#nixos` - Rebuild and switch to new NixOS configuration
 - `nixos-rebuild switch --flake .#nixos --use-remote-sudo` - Rebuild with remote sudo (if needed)
-- `home-manager switch --flake .#kratosgado` - Apply home-manager configuration changes
+- home-manager is loaded as a NixOS module here, so `nixos-rebuild switch` also applies home-manager changes (no separate `home-manager switch` needed)
 - `nix flake update` - Update flake inputs (updates flake.lock)
 - `nix run .` - Test nixvim configuration standalone
 

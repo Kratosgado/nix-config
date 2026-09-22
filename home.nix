@@ -40,7 +40,7 @@ in {
 
     file = {
       "Pictures/wallpaper.jpg" = { source = ./files/wallpaper.jpg; };
-      "Pictures/kratosgado.png" = { source = ./files/kratosgado.png; };
+      "Pictures/${user}.png" = { source = ./files/kratosgado.png; };
       ".npmrc".text = "prefix=$HOME/.npm-packages";
       ".config/kitty/kitty.conf" = { source = ./files/kitty.conf; };
       # # Building this configuration will create a copy of 'dotfiles/screenrc' in
