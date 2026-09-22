@@ -27,6 +27,7 @@
           home-manager.nixosModules.home-manager
           snapd.nixosModules.default
           {
+            # nixpkgs.overlays = [];  # add here if you ever need overlays
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;

@@ -109,13 +109,12 @@ in {
 
     git = {
       enable = true;
+      package = pkgs.gitFull;
       settings = {
         user.name = "Kratosgado";
         user.email = "mbeahessilfieprince@gmail.com";
         push = { autoSetupRemote = true; };
-        credential.helper = "${
-            pkgs.git.override { withLibsecret = true; }
-          }/bin/git-credential-libsecret";
+        credential.helper = "${pkgs.gitFull}/bin/git-credential-libsecret";
       };
     };
     tmux = {

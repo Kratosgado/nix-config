@@ -38,11 +38,8 @@ This is a NixOS flake-based configuration with integrated home-manager setup for
   - `packages/apps.nix`: Application packages
   - `packages/devtools.nix`: Development tools
   - `packages/zsh.nix`: Zsh shell configuration
-- **overlays/**: Nix package overlays for pinning specific package versions
-  - `overlays/pinned-packages.nix`: Pins specific packages to commit `8eaee110344796db060382e15d3af0a9fc396e0e`
-- **nixvim/**: Standalone nixvim configuration (legacy, see README.md)
 - **vscode/**: VS Code configuration module
-- **files/**: Static files (wallpapers, icons) copied to home directory
+- **files/**: Static files (wallpapers, icons, kitty.conf) copied to home directory
 
 ### Key Configuration Patterns
 
@@ -82,15 +79,6 @@ This is a NixOS flake-based configuration with integrated home-manager setup for
 - Home-manager backups files with ".backup" extension
 - Uses JetBrainsMono Nerd Font
 - Timezone: Africa/Accra, Locale: en_GB.UTF-8
-
-### Overlay Usage
-
-The pinned-packages overlay pins specific problematic packages to a known working nixpkgs commit. Currently pins:
-
-- android-studio
-- jetbrains.idea-community
-
-When adding new packages that may need pinning, add them to `overlays/pinned-packages.nix` and uncomment the overlay line in `flake.nix`.
 
 ### Bootstrap (non-Nix tools)
 
